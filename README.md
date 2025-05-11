@@ -1,0 +1,2 @@
+# scoreboard-widget
+Scoreboard Widget
