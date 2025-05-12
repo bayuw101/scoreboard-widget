@@ -4,12 +4,13 @@ export const widgetImages = {
   noEvent: 'https://assets-api.rschooltoday.com/widget/no-event.png',
   live: 'https://assets-api.rschooltoday.com/widget/live.png',
   team: 'https://assets-api.rschooltoday.com/widget/team.png',
+  arbiterLogo: 'https://assets-api.rschooltoday.com/widget/Arbiter-Logo-White.png',
+  arbiterMobileLogo: 'https://assets-api.rschooltoday.com/widget/Arbiter-Favicon-White.png',
 }
 
 export type sportsType = {
-  sportId: string;
+  sportId: string | null;
   sportName: string;
-  sportIcon: string;
 };
 export type levelsType = {
   levelId: string;
@@ -37,367 +38,294 @@ export const sports = [
   {
     sportId: "1",
     sportName: "Baseball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Baseball.jpg",
   },
   {
     sportId: "2",
     sportName: "Basketball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Basketball.jpg",
   },
   {
     sportId: "3",
     sportName: "Field Hockey",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/FieldHockey.jpg",
   },
   {
     sportId: "4",
     sportName: "Football",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Football.jpg",
   },
   {
     sportId: "5",
     sportName: "Hockey",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Hockey.jpg",
   },
   {
     sportId: "6",
     sportName: "Lacrosse",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Lacrosse.jpg",
   },
   {
     sportId: "7",
     sportName: "Ringette",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Ringette.jpg",
   },
   {
     sportId: "8",
     sportName: "Soccer",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Soccer.jpg",
   },
   {
     sportId: "9",
     sportName: "Softball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Softball.jpg",
   },
   {
     sportId: "10",
     sportName: "Swimming",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Swimming.jpg",
   },
   {
     sportId: "11",
     sportName: "Track - Outdoor",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Track.jpg",
   },
   {
     sportId: "12",
     sportName: "Volleyball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Volleyball.jpg",
   },
   {
     sportId: "13",
     sportName: "Water Polo",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/WaterPolo.jpg",
   },
   {
     sportId: "14",
     sportName: "Wrestling",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Wrestling.jpg",
   },
   {
     sportId: "15",
     sportName: "Squash",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Squash.jpg",
   },
   {
     sportId: "16",
     sportName: "Tennis",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Tennis.jpg",
   },
   {
     sportId: "17",
     sportName: "Golf",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Golf.jpg",
   },
   {
     sportId: "18",
     sportName: "Gymnastics",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Gymnastics.jpg",
   },
   {
     sportId: "19",
     sportName: "Soccer Boys Varsity",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Rugby.jpg",
   },
   {
     sportId: "20",
     sportName: "Other",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Other.jpg",
   },
   {
     sportId: "21",
     sportName: "Curling",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Curling.jpg",
   },
   {
     sportId: "22",
     sportName: "Boxing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Boxing.jpg",
   },
   {
     sportId: "23",
     sportName: "Mixed Martial Arts",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/MMA.jpg",
   },
   {
     sportId: "24",
     sportName: "Cricket",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Cricket.jpg",
   },
   {
     sportId: "25",
     sportName: "Cross Country",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/CrossCountry.jpg",
   },
   {
     sportId: "26",
     sportName: "Bowling",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Bowling.jpg",
   },
   {
     sportId: "27",
     sportName: "Ski",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Ski.jpg",
   },
   {
     sportId: "28",
     sportName: "Snowboarding",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Snowboarding.jpg",
   },
   {
     sportId: "29",
     sportName: "Racquetball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Racquetball.jpg",
   },
   {
     sportId: "30",
     sportName: "Competitive Cheerleading",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/CompetitiveCheer.jpg",
   },
   {
     sportId: "31",
     sportName: "Sideline Cheerleading",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/SidelineCheer.jpg",
   },
   {
     sportId: "32",
     sportName: "Equestrian",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Equestrian.jpg",
   },
   {
     sportId: "33",
     sportName: "Badminton",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Badminton.jpg",
   },
   {
     sportId: "34",
     sportName: "Powerlifting",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Powerlifting.jpg",
   },
   {
     sportId: "35",
     sportName: "Riflery",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Riflery.jpg",
   },
   {
     sportId: "36",
     sportName: "Archery",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Archery.jpg",
   },
   {
     sportId: "37",
     sportName: "Rowing/Crew",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Rowing.jpg",
   },
   {
     sportId: "38",
     sportName: "Flag Football",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/FlagFootball.jpg",
   },
   {
     sportId: "39",
     sportName: "Cross Country Skiing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/CrossCountrySkiing.jpg",
   },
   {
     sportId: "40",
     sportName: "Figure Skating",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/FigureSkating.jpg",
   },
   {
     sportId: "41",
     sportName: "Dance",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Dance.jpg",
   },
   {
     sportId: "42",
     sportName: "Pom Pon",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/PomPon.jpg",
   },
   {
     sportId: "43",
     sportName: "Sailing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Sailing.jpg",
   },
   {
     sportId: "44",
     sportName: "Surfing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Surfing.jpg",
   },
   {
     sportId: "45",
     sportName: "Synchronized Swimming",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/SynchronizedSwimming.jpg",
   },
   {
     sportId: "46",
     sportName: "Track - Indoor",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/IndoorTrack.jpg",
   },
   {
     sportId: "47",
     sportName: "Diving",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Diving.jpg",
   },
   {
     sportId: "49",
     sportName: "Football - 8 player",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Football8.jpg",
   },
   {
     sportId: "50",
     sportName: "Fencing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Fencing.jpg",
   },
   {
     sportId: "51",
     sportName: "Netball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Netball.jpg",
   },
   {
     sportId: "52",
     sportName: "Marching Band",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/MarchingBand.jpg",
   },
   {
     sportId: "69",
     sportName: "Tennis - Team",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/TeamTennis.jpg",
   },
   {
     sportId: "70",
     sportName: "Ultimate Frisbee",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/UltimateFrisbee.jpg",
   },
   {
     sportId: "71",
     sportName: "Softball - Slow Pitch",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/SlowPitchSoftball.jpg",
   },
   {
     sportId: "72",
     sportName: "Football - 6 player",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Football6.jpg",
   },
   {
     sportId: "73",
     sportName: "Decathlon",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Decathlon.jpg",
   },
   {
     sportId: "74",
     sportName: "Football - 9 player",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Football9.jpg",
   },
   {
     sportId: "75",
     sportName: "Bass Fishing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/BassFishing.jpg",
   },
   {
     sportId: "76",
     sportName: "Canoe Paddling",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/CanoePaddling.jpg",
   },
   {
     sportId: "77",
     sportName: "Mountain Biking",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/MountainBiking.jpg",
   },
   {
     sportId: "78",
     sportName: "Rodeo",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Rodeo.jpg",
   },
   {
     sportId: "79",
     sportName: "Dance - Jazz",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/JazzDance.jpg",
   },
   {
     sportId: "80",
     sportName: "Drill Team",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/DrillTeam.jpg",
   },
   {
     sportId: "81",
     sportName: "Trap Shooting",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/TrapShooting.jpg",
   },
   {
     sportId: "82",
     sportName: "Rock Climbing",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/RockClimbing.jpg",
   },
   {
     sportId: "83",
     sportName: "Volleyball - Sand",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/SandVolleyball.jpg",
   },
   {
     sportId: "84",
     sportName: "Cycling",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Cycling.jpg",
   },
   {
     sportId: "85",
     sportName: "Floor Hockey",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/FloorHockey.jpg",
   },
   {
     sportId: "86",
     sportName: "Lacrosse - Boys",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/BoysLacrosse.jpg",
   },
   {
     sportId: "87",
     sportName: "Lacrosse - Girls",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/GirlsLacrosse.jpg",
   },
   {
     sportId: "88",
     sportName: "Esports",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Esports.jpg",
   },
   {
     sportId: "89",
     sportName: "Bocce",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Bocce.jpg",
   },
   {
     sportId: "90",
     sportName: "Pickleball",
-    sportIcon: "https://app.arbitersports-beta.com/images/sports/square/Pickleball.jpg",
   },
 ];
 

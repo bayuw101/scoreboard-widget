@@ -12,9 +12,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/arbiter-scoreboard.tsx",
-      name: "ArbiterScoreboard", // This ensures the global name is ArbiterScoreboard
+      name: "ArbiterScoreboard",
       fileName: "arbiter-scoreboard",
-      formats: ["iife"], // Builds an Immediately Invoked Function Expression (IIFE)
+      formats: ["iife"],
     },
     rollupOptions: {
       output: {

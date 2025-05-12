@@ -3,12 +3,12 @@ import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
 import "./index.css";
 import Scoreboard from "./Scoreboard.tsx";
-import type { optionsType } from "./types/index.ts";
+import type { optionsType, parametersType } from "./types/index.ts";
 import { defaultOptions } from "./lib/options.ts";
 
 const roots: Record<string, Root> = {}; // Store root instances by target ID
 
-function init(config?: { target?: string; options?: optionsType }) {
+function init(config?: { target?: string; options?: optionsType; parameters?: parametersType }) {
   if (!config) {
     config = {};
   }
@@ -29,6 +29,10 @@ function init(config?: { target?: string; options?: optionsType }) {
     throw new Error("Arbiter Scoreboard : Target must start with '#' to indicate an ID.");
   }
 
+  if(!config.parameters){
+    config.parameters = {};
+  }
+
   const targetId = target.slice(1);
   const rootElement = document.getElementById(targetId);
 
@@ -44,10 +48,12 @@ function init(config?: { target?: string; options?: optionsType }) {
     roots[targetId] = createRoot(rootElement);
   }
 
+  const rootWidth = rootElement.offsetWidth || window.innerWidth;
+
   // Use the existing root to render the component
   roots[targetId].render(
     <StrictMode>
-      <Scoreboard options={options} />
+      <Scoreboard options={options} parameters={config.parameters} rootWidth={rootWidth}/>
     </StrictMode>
   );
 }

@@ -1,10 +1,10 @@
 import type { optionsType } from "../types";
 
-interface CarouselItemLoaderProps {
+interface ItemLoaderProps {
   options: optionsType;
 }
 
-const CarouselItemLoader = ({ options }: CarouselItemLoaderProps) => {
+const ItemLoader = ({ options }: ItemLoaderProps) => {
   // Reusable skeleton loader for team rows
   const renderTeam = () => (
     <div className="flex items-center justify-between w-full">
@@ -12,7 +12,7 @@ const CarouselItemLoader = ({ options }: CarouselItemLoaderProps) => {
         <div className="w-6 h-6 bg-gray-300 rounded-full" />
         <div className="w-36 h-6 bg-gray-300 rounded" />
       </div>
-      <div className="w-6 h-6 bg-gray-300 animate-pulse rounded"></div>
+      <div className="w-10 h-6 bg-gray-300 animate-pulse rounded"></div>
     </div>
   );
 
@@ -50,4 +50,4 @@ const CarouselItemLoader = ({ options }: CarouselItemLoaderProps) => {
   );
 };
 
-export default CarouselItemLoader;
+export default ItemLoader;

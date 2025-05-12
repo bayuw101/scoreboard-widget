@@ -2,7 +2,7 @@ import type { optionsType } from "../types";
 
 export const defaultOptions:optionsType = {
     header: "top",
-    arbiterLogo: true,
+    arbiterLogo: "mini",
     primaryColor: "#26213E",
     secondaryColor: "#524D65",
     thirdColor: "#E41F26",
