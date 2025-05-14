@@ -29,7 +29,7 @@ const Header = ({
   const isWide = rootWidth >= 900;
 
   const logoSrc = useMemo(() => {
-    if (options.arbiterLogo && isWide && options.arbiterLogo === "mini") {
+    if (options.arbiterLogo && isWide && options.arbiterLogo === "full") {
       return widgetImages.arbiterLogo;
     }
     return widgetImages.arbiterMobileLogo;

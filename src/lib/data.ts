@@ -475,7 +475,7 @@ export const genders = [
   },
 ];
 
-export const resources = [
+export const resources2 = [
   {
     home: "Manchester City",
     away: "Arsenal",
@@ -520,6 +520,55 @@ export const resources = [
       "https://upload.wikimedia.org/wikipedia/en/4/4c/La_Liga_logo.png",
     date: "2023-10-02",
     time: "18:00",
+  }
+];
+
+
+export const resources = [
+  {
+    home: "Manchester City",
+    away: "Arsenal",
+    homeScore: "2",
+    awayScore: "1",
+    homeLogo:
+      "https://upload.wikimedia.org/wikipedia/en/e/ec/Manchester_City_FC_badge.svg",
+    awayLogo: "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+    sport: "Football",
+    sportLogo:
+      "https://upload.wikimedia.org/wikipedia/en/4/4c/Premier_League_Logo.png",
+    date: "2025-05-10",
+    time: "16:00",
+    isLive: true,
+  },
+  {
+    home: "Liverpool",
+    away: "Chelsea",
+    homeScore: "3",
+    awayScore: "2",
+    homeLogo:
+      "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC_logo.png",
+    awayLogo: "https://upload.wikimedia.org/wikipedia/en/a/a9/Chelsea_FC.svg",
+    sport: "Football",
+    sportLogo:
+      "https://upload.wikimedia.org/wikipedia/en/4/4c/Premier_League_Logo.png",
+    date: "2025-05-10",
+    time: "16:00",
+    isLive: true,
+  },
+  {
+    home: "Real Madrid",
+    away: "Barcelona",
+    homeScore: "1",
+    awayScore: "1",
+    homeLogo:
+      "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
+    awayLogo:
+      "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
+    sport: "Football",
+    sportLogo:
+      "https://upload.wikimedia.org/wikipedia/en/4/4c/La_Liga_logo.png",
+    date: "2025-05-11",
+    time: "18:00",
   },
   {
     home: "Golden State Warriors",
@@ -532,7 +581,7 @@ export const resources = [
       "https://upload.wikimedia.org/wikipedia/en/3/3c/Los_Angeles_Lakers_logo.svg",
     sport: "Basketball",
     sportLogo: "https://upload.wikimedia.org/wikipedia/en/0/03/NBA_logo.svg",
-    date: "2023-10-03",
+    date: "2025-05-12",
     time: "20:00",
   },
   {
@@ -546,7 +595,7 @@ export const resources = [
       "https://upload.wikimedia.org/wikipedia/en/6/6d/Boston_Red_Sox_cap_logo.svg",
     sport: "Baseball",
     sportLogo: "https://upload.wikimedia.org/wikipedia/en/a/a6/MLB_logo.svg",
-    date: "2023-10-04",
+    date: "2025-05-13",
     time: "19:00",
   },
   {
@@ -561,7 +610,7 @@ export const resources = [
     sport: "Tennis",
     sportLogo:
       "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    date: "2023-10-05",
+    date: "2025-05-14",
     time: "15:00",
   },
   {
@@ -576,7 +625,7 @@ export const resources = [
     sport: "Football",
     sportLogo:
       "https://upload.wikimedia.org/wikipedia/en/4/4c/UEFA_Champions_League_logo_2.svg",
-    date: "2023-10-06",
+    date: "2025-05-15",
     time: "21:00",
   },
   {
@@ -590,7 +639,7 @@ export const resources = [
       "https://upload.wikimedia.org/wikipedia/en/4/44/Brooklyn_Nets_newlogo.svg",
     sport: "Basketball",
     sportLogo: "https://upload.wikimedia.org/wikipedia/en/0/03/NBA_logo.svg",
-    date: "2023-10-07",
+    date: "2025-05-16",
     time: "19:30",
   },
   {
@@ -604,7 +653,7 @@ export const resources = [
       "https://upload.wikimedia.org/wikipedia/en/a/ab/St._Louis_Cardinals_logo.svg",
     sport: "Baseball",
     sportLogo: "https://upload.wikimedia.org/wikipedia/en/a/a6/MLB_logo.svg",
-    date: "2023-10-08",
+    date: "2025-05-17",
     time: "18:00",
   },
   {
@@ -619,451 +668,7 @@ export const resources = [
     sport: "Tennis",
     sportLogo:
       "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    date: "2023-10-09",
+    date: "2025-05-18",
     time: "14:00",
-  },
-  {
-    home: "New Zealand",
-    away: "South Africa",
-    homeScore: "28",
-    awayScore: "24",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/31/New_Zealand_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/South_Africa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-10",
-    time: "17:00",
-  },
-  {
-    home: "Paris Saint-Germain",
-    away: "Bayern Munich",
-    homeScore: "3",
-    awayScore: "2",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg",
-    sport: "Football",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4c/UEFA_Champions_League_logo_2.svg",
-    date: "2023-10-06",
-    time: "21:00",
-  },
-  {
-    home: "Milwaukee Bucks",
-    away: "Brooklyn Nets",
-    homeScore: "110",
-    awayScore: "108",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4a/Milwaukee_Bucks_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/44/Brooklyn_Nets_newlogo.svg",
-    sport: "Basketball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/0/03/NBA_logo.svg",
-    date: "2023-10-07",
-    time: "19:30",
-  },
-  {
-    home: "Chicago Cubs",
-    away: "St. Louis Cardinals",
-    homeScore: "7",
-    awayScore: "6",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/8/80/Chicago_Cubs_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/a/ab/St._Louis_Cardinals_logo.svg",
-    sport: "Baseball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/a/a6/MLB_logo.svg",
-    date: "2023-10-08",
-    time: "18:00",
-  },
-  {
-    home: "Novak Djokovic",
-    away: "Andy Murray",
-    homeScore: "7",
-    awayScore: "5",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    sport: "Tennis",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    date: "2023-10-09",
-    time: "14:00",
-  },
-  {
-    home: "New Zealand",
-    away: "South Africa",
-    homeScore: "28",
-    awayScore: "24",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/31/New_Zealand_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/South_Africa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-10",
-    time: "17:00",
-  },
-  {
-    home: "Manchester United",
-    away: "Liverpool",
-    homeScore: "2",
-    awayScore: "2",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC_logo.png",
-    sport: "Football",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4c/Premier_League_Logo.png",
-    date: "2023-10-12",
-    time: "18:30",
-  },
-  {
-    home: "Golden State Warriors",
-    away: "Boston Celtics",
-    homeScore: "115",
-    awayScore: "112",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg",
-    sport: "Basketball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/0/03/NBA_logo.svg",
-    date: "2023-10-13",
-    time: "20:00",
-  },
-  {
-    home: "New York Yankees",
-    away: "Los Angeles Dodgers",
-    homeScore: "4",
-    awayScore: "3",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/2/25/New_York_Yankees_Primary_Logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/6/69/Los_Angeles_Dodgers_Logo.svg",
-    sport: "Baseball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/a/a6/MLB_logo.svg",
-    date: "2023-10-14",
-    time: "19:00",
-  },
-  {
-    home: "Roger Federer",
-    away: "Novak Djokovic",
-    homeScore: "6",
-    awayScore: "7",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    sport: "Tennis",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    date: "2023-10-15",
-    time: "15:00",
-  },
-  {
-    home: "New Zealand All Blacks",
-    away: "Australia Wallabies",
-    homeScore: "32",
-    awayScore: "18",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/31/New_Zealand_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3f/Australia_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-16",
-    time: "17:00",
-  },
-  {
-    home: "India",
-    away: "Pakistan",
-    homeScore: "300",
-    awayScore: "280",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3e/India_national_cricket_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/2/2e/Pakistan_cricket_team_logo.svg",
-    sport: "Cricket",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4e/ICC_Cricket_World_Cup_logo.svg",
-    date: "2023-10-17",
-    time: "14:00",
-  },
-  {
-    home: "Real Madrid",
-    away: "Atletico Madrid",
-    homeScore: "3",
-    awayScore: "1",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
-    sport: "Football",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4c/La_Liga_logo.png",
-    date: "2023-10-18",
-    time: "21:00",
-  },
-  {
-    home: "Los Angeles Lakers",
-    away: "Miami Heat",
-    homeScore: "102",
-    awayScore: "99",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3c/Los_Angeles_Lakers_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/f/fb/Miami_Heat_logo.svg",
-    sport: "Basketball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/0/03/NBA_logo.svg",
-    date: "2023-10-19",
-    time: "22:00",
-  },
-  {
-    home: "Chicago Cubs",
-    away: "San Francisco Giants",
-    homeScore: "5",
-    awayScore: "4",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/8/80/Chicago_Cubs_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/5/58/San_Francisco_Giants_Logo.svg",
-    sport: "Baseball",
-    sportLogo: "https://upload.wikimedia.org/wikipedia/en/a/a6/MLB_logo.svg",
-    date: "2023-10-20",
-    time: "19:30",
-  },
-  {
-    home: "Serena Williams",
-    away: "Naomi Osaka",
-    homeScore: "6",
-    awayScore: "4",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    sport: "Tennis",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tennis_ball.svg",
-    date: "2023-10-21",
-    time: "16:00",
-  },
-  {
-    home: "England",
-    away: "South Africa",
-    homeScore: "25",
-    awayScore: "20",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/5/55/England_rugby_textlogo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/South_Africa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-22",
-    time: "18:00",
-  },
-  {
-    home: "New Zealand",
-    away: "South Africa",
-    homeScore: "28",
-    awayScore: "24",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/31/New_Zealand_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/South_Africa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-10",
-    time: "17:00",
-  },
-  {
-    home: "England",
-    away: "France",
-    homeScore: "18",
-    awayScore: "22",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/e/e4/England_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4f/France_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-11",
-    time: "20:00",
-  },
-  {
-    home: "Australia",
-    away: "Wales",
-    homeScore: "15",
-    awayScore: "27",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/0/0c/Australia_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/d/d4/Wales_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-12",
-    time: "14:30",
-  },
-  {
-    home: "Ireland",
-    away: "Scotland",
-    homeScore: "32",
-    awayScore: "19",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/f/f2/Ireland_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/e/e9/Scotland_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-13",
-    time: "16:00",
-  },
-  {
-    home: "Japan",
-    away: "Italy",
-    homeScore: "21",
-    awayScore: "20",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/1/16/Japan_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/1/1f/Italy_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-14",
-    time: "12:00",
-  },
-  {
-    home: "Argentina",
-    away: "Fiji",
-    homeScore: "26",
-    awayScore: "25",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/2/28/Argentina_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/b/b3/Fiji_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-15",
-    time: "19:30",
-  },
-  {
-    home: "Tonga",
-    away: "Samoa",
-    homeScore: "19",
-    awayScore: "21",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/8/83/Tonga_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/e/e6/Samoa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-16",
-    time: "15:00",
-  },
-  {
-    home: "Georgia",
-    away: "Uruguay",
-    homeScore: "30",
-    awayScore: "17",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/e/eb/Georgia_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4c/Uruguay_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-17",
-    time: "13:00",
-  },
-  {
-    home: "Namibia",
-    away: "Canada",
-    homeScore: "16",
-    awayScore: "35",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/49/Namibia_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/45/Canada_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-18",
-    time: "18:45",
-  },
-  {
-    home: "Romania",
-    away: "Portugal",
-    homeScore: "23",
-    awayScore: "20",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4f/Romania_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/6/66/Portugal_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-19",
-    time: "11:00",
-  },
-  {
-    home: "New Zealand",
-    away: "South Africa",
-    homeScore: "28",
-    awayScore: "24",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/31/New_Zealand_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/South_Africa_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-10",
-    time: "17:00",
-  },
-  {
-    home: "England",
-    away: "France",
-    homeScore: "18",
-    awayScore: "22",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/e/e4/England_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/4/4f/France_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-11",
-    time: "20:00",
-  },
-  {
-    home: "Australia",
-    away: "Wales",
-    homeScore: "15",
-    awayScore: "27",
-    homeLogo:
-      "https://upload.wikimedia.org/wikipedia/en/0/0c/Australia_rugby_union_team_logo.svg",
-    awayLogo:
-      "https://upload.wikimedia.org/wikipedia/en/d/d4/Wales_national_rugby_union_team_logo.svg",
-    sport: "Soccer Boys Varsity",
-    sportLogo:
-      "https://upload.wikimedia.org/wikipedia/en/3/3a/Rugby_World_Cup_Logo_2019.svg",
-    date: "2023-10-12",
-    time: "14:30",
   },
 ];

@@ -17,6 +17,7 @@ import Sidebar from "./components/Sidebar";
 import type { optionsType, parametersType } from "./types";
 import type { Range } from "react-date-range";
 import { hexToRgba } from "./utils/colorUtils";
+import { formatDate } from "./utils/dateUtils";
 
 interface ScoreboardProps {
   options: optionsType;
@@ -45,7 +46,7 @@ const Scoreboard = ({ options, parameters, rootWidth }: ScoreboardProps) => {
 
   const slides = useMemo(() => {
     const breakpoints = [
-      { width: 1531, slides: 6 },
+      { width: 1531, slides: 7 },
       { width: 1281, slides: 5 },
       { width: 1025, slides: 4 },
       { width: 900, slides: 3 },
@@ -101,6 +102,20 @@ const Scoreboard = ({ options, parameters, rootWidth }: ScoreboardProps) => {
     return filtered;
   }, [sportIds, parameters.genderId, parameters.levelId]);
 
+  const initialSlideIndex = useMemo(() => {
+    const today = formatDate(new Date().toISOString());
+    const dates = resources.map((e) => formatDate(e.date));
+    let index = resources.findIndex((e) => formatDate(e.date) === today);
+  
+    if (index === -1) {
+      const uniqueDates = Array.from(new Set(dates)).sort((a, b) => b.localeCompare(a));
+      const fallbackDate = uniqueDates.find((d) => d < today);
+      index = resources.findIndex((e) => formatDate(e.date) === fallbackDate);
+    }
+  
+    return index >= 0 ? index : 0;
+  }, [resources]);
+
   const sliderSettings = useMemo(
     () => ({
       dots: false,
@@ -109,6 +124,8 @@ const Scoreboard = ({ options, parameters, rootWidth }: ScoreboardProps) => {
       autoplaySpeed: 3000,
       slidesToShow: slides,
       slidesToScroll: 1,
+      initialSlide: initialSlideIndex,
+      infinite:resources.length > slides,
     }),
     [slides]
   );
