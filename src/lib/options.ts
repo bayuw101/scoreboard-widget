@@ -1,11 +1,15 @@
-import type { optionsType } from "../types";
+import type { OptionsType } from "../types";
 
-export const defaultOptions:optionsType = {
+export const defaultOptions:OptionsType = {
+    theme: "light",
     header: "top",
     arbiterLogo: "mini",
-    primaryColor: "#26213E",
-    secondaryColor: "#524D65",
+    vertical: false,
+    primaryColor: "#26213e",
+    secondaryColor: "#3d3851",
     thirdColor: "#E41F26",
-    backgroundColor: "#f6f3f4", // Light Gray
+    backgroundColor: "#f3f4f6", // Light Gray
     hideSports: false,
+    location: true,
+    whiteTeamLogo: false,
 };

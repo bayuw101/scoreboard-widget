@@ -8,13 +8,26 @@
   </head>
   <body>
     <div id="arbiter-scoreboard"></div>
+    <div id="arbiter-scoreboard-left"></div>
 
     <script src="/arbiter-scoreboard.iife.js"></script>
     <script>
       ArbiterScoreboard.init({
           target: "#arbiter-scoreboard",
+          token: "98a48f99-aaa8-4c00-8285-d9eeb25aeb11",
           options: {
-            header: "bottom",
+            header: "top",
+            thirdColor: "#0054d5",
+            secondaryColor: "#001c41",
+            primaryColor: "#001c41",
+          },
+        });
+        
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard-left",
+          token: "98a48f99-aaa8-4c00-8285-d9eeb25aeb11",
+          options: {
+            header: "left",
             thirdColor: "#0054d5",
             secondaryColor: "#001c41",
             primaryColor: "#001c41",

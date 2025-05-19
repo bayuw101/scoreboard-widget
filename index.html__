@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <style>
+      #arbiter-scoreboard {
+        width: 100%;
+        /* height: 100vh; */
+        background-color: #001c41;
+      }
+      .wrapper{
+        padding:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="width: 70%;float:left;">
+      <div class="wrapper" id="arbiter-scoreboard"></div>
+      <div class="wrapper" id="arbiter-scoreboard-bottom"></div>
+      <div class="wrapper" id="arbiter-scoreboard-left"></div>
+      <div class="wrapper" id="arbiter-scoreboard-right"></div>
+    </div>
+    <div style="width: 30%;float:right;">
+      <div style="height: 100vh;" class="wrapper" id="arbiter-scoreboard-vertical"></div>
+    </div>
+    <br />
+    <!-- <div id="arbiter-scoreboard-two"></div> -->
+
+    <script type="module" src="src/arbiter-scoreboard.tsx"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard",
+          token: "b30401e4-f447-47e5-8338-7a0d7ff73cab",
+          options: {
+            header: "top",
+            thirdColor: "#0054d5",
+            secondaryColor: "#0054d5",
+            primaryColor: "#001c41",
+          },
+          // parameters: {
+          //   sportId: [1,2,3,4,5,6,7,8,9,10],
+          //   genderId: 1,
+          //   levelId: 1
+          // },
+        });
+
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard-bottom",
+          token: "b30401e4-f447-47e5-8338-7a0d7ff73cab",
+          options: {
+            header: "bottom"
+          },
+          // parameters: {
+          //   sportId: [1,2,3,4,5,6,7,8,9,10],
+          //   genderId: 1,
+          //   levelId: 1
+          // },
+        });
+
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard-left",
+          token: "b30401e4-f447-47e5-8338-7a0d7ff73cab",
+          options: {
+            header: "left",
+            thirdColor: "#0054d5",
+            secondaryColor: "#0054d5",
+            primaryColor: "#001c41",
+          },
+          // parameters: {
+          //   sportId: [1,2,3,4,5,6,7,8,9,10],
+          //   genderId: 1,
+          //   levelId: 1
+          // },
+        });
+
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard-right",
+          token: "b30401e4-f447-47e5-8338-7a0d7ff73cab",
+          options: {
+            header: "right",
+            secondaryColor: "#E41F26",
+          },
+          // parameters: {
+          //   sportId: [1,2,3,4,5,6,7,8,9,10],
+          //   genderId: 1,
+          //   levelId: 1
+          // },
+        });
+
+        ArbiterScoreboard.init({
+          target: "#arbiter-scoreboard-vertical",
+          token: "b30401e4-f447-47e5-8338-7a0d7ff73cab",
+          options: {
+            vertical: true
+          },
+          // parameters: {
+          //   sportId: [1,2,3,4,5,6,7,8,9,10],
+          //   genderId: 1,
+          //   levelId: 1
+          // },
+        });
+
+        // ArbiterScoreboard.init({
+        //   target: "#arbiter-scoreboard-two",
+        // });
+      });
+    </script>
+  </body>
+</html>

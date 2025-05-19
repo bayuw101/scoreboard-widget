@@ -9,8 +9,3 @@ import App from './App';
 //     <App />
 //   </React.StrictMode>
 // );
-
-
-const init = () => {
-  console.log("ArbiterScoreboard initialized2");
-};

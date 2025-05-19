@@ -2,18 +2,33 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import type { Root } from "react-dom/client";
 import "./index.css";
-import Scoreboard from "./Scoreboard.tsx";
-import type { optionsType, parametersType } from "./types/index.ts";
+import Scoreboard from "./Scoreboard.tsx"
+// import Scoreboard from "./components/Scoreboard";
+import type { OptionsType, ParameterType } from "./types/index.ts";
 import { defaultOptions } from "./lib/options.ts";
+import { showErrorToast } from "./utils/toastUtils.ts";
+import { isParameterType } from "./utils/typeValidators.ts"
 
-const roots: Record<string, Root> = {}; // Store root instances by target ID
+const roots: Record<string, Root> = {};
 
-function init(config?: { target?: string; options?: optionsType; parameters?: parametersType }) {
+function init(config?: {
+  target?: string;
+  token?: string;
+  options?: OptionsType;
+  data?: ParameterType;
+}) {
   if (!config) {
     config = {};
   }
 
-  if(!config.options){
+  if (!config.token) {
+    showErrorToast(
+      "Arbiter Scoreboard : Token is required. Please provide a valid token."
+    );
+    return;
+  }
+
+  if (!config.options) {
     config.options = {};
   }
 
@@ -26,41 +41,80 @@ function init(config?: { target?: string; options?: optionsType; parameters?: pa
   const { target, options } = config;
 
   if (!target.startsWith("#")) {
-    throw new Error("Arbiter Scoreboard : Target must start with '#' to indicate an ID.");
+    showErrorToast(
+      "Arbiter Scoreboard : Target must start with '#' to indicate an ID."
+    );
+    return;
   }
 
-  if(!config.parameters){
-    config.parameters = {};
+  if (!config.data) {
+    config.data = {};
   }
 
   const targetId = target.slice(1);
   const rootElement = document.getElementById(targetId);
 
   if (!rootElement) {
-    throw new Error(
-      `Arbiter Scoreboard : Element with id '${target}' not found. Check your index.html file.`
+    showErrorToast(
+      `Arbiter Scoreboard : Element with id '${target}' not found. Check your file.`
     );
+    return;
   }
 
-  // Check if a root already exists for this container
   if (!roots[targetId]) {
-    // Create a new root if it doesn't exist
     roots[targetId] = createRoot(rootElement);
   }
 
-  const rootWidth = rootElement.offsetWidth || window.innerWidth;
+  if (!isParameterType(config.data)) {
+    showErrorToast(
+      "Arbiter Scoreboard : Provided data is not compatible with the expected ParameterType."
+    );
+    return;
+  }
 
-  // Use the existing root to render the component
+  const itemHeight = options.location ? 145  : 125;
+  const rootWidth = rootElement.offsetWidth || window.innerWidth;
+  const rootHeight = (rootElement.offsetHeight > itemHeight ? rootElement.offsetHeight : itemHeight) || window.innerHeight;
+  
+  if (options.vertical) {
+    if (options.header === "left") {
+      options.header = "top";
+    } else if (options.header === "right") {
+      options.header = "bottom";
+    }
+  }
+
+
+  if(options.theme === "dark"){
+    options.backgroundColor = options.primaryColor;
+    // options.secondaryColor = options.thirdColor;
+  }
+
+  if(options.header === false){
+    
+    if(options.theme === "dark"){
+      options.backgroundColor = options.secondaryColor;
+      // options.secondaryColor = options.thirdColor;
+    }
+    options.secondaryColor = options.primaryColor;
+  }
+
   roots[targetId].render(
     <StrictMode>
-      <Scoreboard options={options} parameters={config.parameters} rootWidth={rootWidth}/>
+      <Scoreboard
+        options={options}
+        token={config.token}
+        parameters={config.data}
+        rootWidth={rootWidth}
+        rootHeight={rootHeight}
+        itemHeight={itemHeight}
+      />
     </StrictMode>
   );
 }
 
 function destroy(target?: string) {
-  if(!target) {
-    // If no target is provided, destroy all initialized scoreboards
+  if (!target) {
     for (const id in roots) {
       const root = roots[id];
       root.unmount();
@@ -70,22 +124,23 @@ function destroy(target?: string) {
   }
 
   if (!target.startsWith("#")) {
-    throw new Error("Arbiter Scoreboard : Target must start with '#' to indicate an ID.");
+    throw new Error(
+      "Arbiter Scoreboard : Target must start with '#' to indicate an ID."
+    );
   }
 
   const targetId = target.slice(1);
   const root = roots[targetId];
 
   if (!root) {
-    throw new Error(`Arbiter Scoreboard : No initialized scoreboard found for target '${target}'.`);
+    throw new Error(
+      `Arbiter Scoreboard : No initialized scoreboard found for target '${target}'.`
+    );
   }
-
-  // Unmount the React component and clean up the root
   root.unmount();
   delete roots[targetId];
 }
 
 if (typeof window !== "undefined") {
   (window as any).ArbiterScoreboard = { init, destroy };
-  // Optional: You can also add a method to destroy all instances
 }

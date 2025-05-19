@@ -31,4 +31,17 @@
     transition: transform 0.2s ease-in-out;
 }
 
+.slick-vertical .slick-slide{
+    border:0px !important;
+}
 
+@media screen and (max-width: 768px) {
+    .rdrDefinedRangesWrapper {
+        display: none !important;
+    }
+}
+
+.multiply-image{
+  /* mix-blend-mode: multiply !important;
+  filter: invert(100%) !important; */
+}

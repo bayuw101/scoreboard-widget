@@ -1,21 +1,24 @@
 import { useMemo } from "react";
 import type { Range } from "react-date-range";
-import { widgetImages, type sportsType } from "../lib/data";
-import type { optionsType, parametersType } from "../types";
+import { widgetImages } from "../lib/data";
+import type { OptionsType, ParameterType, SportType } from "../types";
 import { hexToRgba } from "../utils/colorUtils";
 import DatePicker from "./DatePicker";
 import SportPicker from "./SportPicker";
 
 interface HeaderProps {
-  sports: sportsType[];
+  sports: SportType[];
   rootWidth: number;
-  options: optionsType;
+  options: OptionsType;
   setDateRange: (dateRange: Range[]) => void;
   dateRange: Range[];
-  selectedSport: sportsType | null;
-  setSelectedSport: (sport: sportsType | null) => void;
-  parameters?: parametersType;
+  selectedSport: SportType | null;
+  setSelectedSport: (sport: SportType | null) => void;
+  parameters?: ParameterType;
+  eventsLoading?: boolean;
 }
+
+export type { HeaderProps };
 
 const Header = ({
   sports,
@@ -25,6 +28,7 @@ const Header = ({
   dateRange,
   selectedSport,
   setSelectedSport,
+  eventsLoading,
 }: HeaderProps) => {
   const isWide = rootWidth >= 900;
 
@@ -83,7 +87,7 @@ const Header = ({
     <div className="h-12 items-center justify-between z-50">
       <div
         className="flex items-center justify-between h-12"
-        style={{ backgroundColor: hexToRgba(options.primaryColor) }}
+        style={{ backgroundColor: hexToRgba(options.theme === "dark" && options.header === "bottom" ? options.secondaryColor : options.primaryColor) }}
       >
         {/* Left Section: Logo + Sport Picker */}
         <div className="flex items-center">
@@ -93,15 +97,24 @@ const Header = ({
             setSelectedSport={setSelectedSport}
             sports={sports}
             rootWidth={rootWidth}
+            eventsLoading={eventsLoading}
+            options={options}
           />
         </div>
 
         {/* Right Section: Date Picker */}
-        <DatePicker
-          setDateRange={setDateRange}
-          dateRange={dateRange}
-          options={options}
-        />
+        {eventsLoading ? (
+          <div className="rounded-md flex items-center justify-center mr-2 h-7 w-[100px] md:w-[200px] bg-gray-300 animate-pulse"></div>
+        ) : (
+          <div className="pr-3">
+            <DatePicker
+              setDateRange={setDateRange}
+              dateRange={dateRange}
+              options={options}
+              rootWidth={rootWidth}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

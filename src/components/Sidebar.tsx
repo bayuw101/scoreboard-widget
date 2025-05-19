@@ -1,20 +1,24 @@
 import type { Range } from "react-date-range";
-import { widgetImages, type sportsType } from "../lib/data";
-import type { optionsType, parametersType } from "../types";
+import { widgetImages } from "../lib/data";
+import type { OptionsType, ParameterType, SportType } from "../types";
 import { hexToRgba } from "../utils/colorUtils";
 import DatePicker from "./DatePicker";
 import SportPicker from "./SportPicker";
 
 interface SidebarProps {
-  sports: sportsType[];
+  sports: SportType[];
   rootWidth: number;
-  options: optionsType;
+  options: OptionsType;
   setDateRange: (dateRange: Range[]) => void;
   dateRange: Range[];
-  selectedSport: sportsType | null;
-  setSelectedSport: (sport: sportsType | null) => void;
-  parameters?: parametersType;
+  selectedSport: SportType | null;
+  setSelectedSport: (sport: SportType | null) => void;
+  parameters?: ParameterType;
+  eventsLoading?: boolean;
+  slides: number;
 }
+
+export type { SidebarProps };
 
 const Sidebar = ({
   sports,
@@ -24,19 +28,24 @@ const Sidebar = ({
   dateRange,
   selectedSport,
   setSelectedSport,
+  eventsLoading,
+  slides,
 }: SidebarProps) => {
   const secondaryColor = hexToRgba(options.secondaryColor);
-  const secondaryBorder = hexToRgba(options.secondaryColor, 0.9);
-  const lightWhiteBorder = hexToRgba("#FFFFFF", 0.1);
-  const primaryColor = hexToRgba(options.primaryColor);
+  const lightWhiteBorder = secondaryColor;
+  const secondaryBorder = secondaryColor;
+  const primaryColor = hexToRgba(options.primaryColor, 0.85);
 
-  return (
+  const renderSidebar = () => (
     <div className="h-12 z-50">
       {/* Top Bar */}
       <div className="border-r-8" style={{ borderRightColor: secondaryBorder }}>
         <div
           className="border-r-8 h-[28px] w-full flex items-center justify-center text-xs font-semibold text-white"
-          style={{ backgroundColor: secondaryColor, borderRightColor: lightWhiteBorder }}
+          style={{
+            backgroundColor: secondaryColor,
+            borderRightColor: lightWhiteBorder,
+          }}
         >
           <span className="text-sm tracking-widest flex items-center mt-[2px]">
             SCOREBOARD
@@ -55,17 +64,28 @@ const Sidebar = ({
       {/* Bottom Section */}
       <div
         className="flex flex-col items-center justify-between h-12"
-        style={{ backgroundColor: primaryColor }}
       >
         {/* Sport Picker */}
-        <div className="flex items-center justify-between w-full pt-2">
-          <SportPicker
-            selectedSport={selectedSport}
-            setSelectedSport={setSelectedSport}
-            sports={sports}
-            rootWidth={rootWidth}
-            forSidebar
-          />
+        <div className="flex items-center justify-between w-full" style={{
+          paddingTop: !options.location ? "4px" : "15px",
+        }}>
+          {eventsLoading ? (
+            <div className="flex items-center h-12 w-full">
+              <div className="flex space-x-4 mx-4 rounded-md bg-gray-300 h-7 animate-pulse items-center w-full">
+
+              </div>
+            </div>
+          ) : (
+            <SportPicker
+              selectedSport={selectedSport}
+              setSelectedSport={setSelectedSport}
+              sports={sports}
+              rootWidth={rootWidth}
+              forSidebar
+              eventsLoading={eventsLoading}
+              options={options}
+            />
+          )}
         </div>
 
         {/* Logo & Date Picker */}
@@ -77,14 +97,36 @@ const Sidebar = ({
               className="h-6"
             />
           </div>
-          <DatePicker
-            setDateRange={setDateRange}
-            dateRange={dateRange}
-            options={options}
-            showPosition={options.header === "left" ? "right" : "left"}
-          />
+
+          {eventsLoading ? (
+            <div  style={{
+              margin: options.location ? "8px" : "3.5px",
+              marginRight: options.location ? "-4px" : "0px",
+            }} className="rounded-md flex items-center justify-center h-7 w-[100px] md:w-[160px] bg-gray-300 animate-pulse"></div>
+          ) : (
+            <DatePicker
+              setDateRange={setDateRange}
+              dateRange={dateRange}
+              options={options}
+              showPosition={options.header === "left" ? "right" : "left"}
+              rootWidth={rootWidth}
+            />
+          )}
         </div>
       </div>
+    </div>
+  );
+
+  return (
+    <div
+      className="sidebar"
+      style={{
+        width: `${(1 / (slides + 1)) * 100}%`,
+        minWidth: "100px",
+        backgroundColor: primaryColor,
+      }}
+    >
+      {renderSidebar()}
     </div>
   );
 };

@@ -6,37 +6,64 @@ import {
 } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import type { optionsType } from "../types";
+import type { OptionsType } from "../types";
 
 interface DatePickerProps {
   setDateRange: (dateRange: Range[]) => void;
   dateRange: Range[];
-  options: optionsType;
+  options: OptionsType;
   showPosition?: "right" | "left";
+  rootWidth: number;
 }
 
 const DatePicker = ({
   setDateRange,
   dateRange,
   showPosition = "left",
+  rootWidth,
+  options,
 }: DatePickerProps) => {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const datePickerRef = useRef<HTMLDivElement>(null);
 
-  // Memoized formatted date range string
   const formattedRange = useMemo(() => {
-    const start = dateRange[0].startDate?.toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-    const end = dateRange[0].endDate?.toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    });
-    return `${start} - ${end}`;
-  }, [dateRange]);
+    const startDate = dateRange[0].startDate;
+    const endDate = dateRange[0].endDate;
+  
+    if (!startDate || !endDate) return null;
+  
+    const startDay = startDate.getDate();
+    const startMonth = startDate.toLocaleString("en-US", { month: "short" });
+    const startYear = startDate.getFullYear();
+  
+    const endDay = endDate.getDate();
+    const endMonth = endDate.toLocaleString("en-US", { month: "short" });
+    const endYear = endDate.getFullYear();
+  
+    let formatted = "";
+  
+    if (
+      startDay === endDay &&
+      startMonth === endMonth &&
+      startYear === endYear
+    ) {
+      // Same date → May 20, 2025
+      formatted = `${startMonth} ${startDay}, ${startYear}`;
+    } else if (startYear === endYear) {
+      if (startMonth === endMonth) {
+        // Same month/year → May 20 - 25, 2025
+        formatted = `${startMonth} ${startDay} to ${endDay}, ${startYear}`;
+      } else {
+        // Same year, different months → May 20 - Jun 10, 2025
+        formatted = `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${startYear}`;
+      }
+    } else {
+      // Different years → Dec 31, 2024 - Jan 2, 2025
+      formatted = `${startMonth} ${startDay}, ${startYear} - ${endMonth} ${endDay}, ${endYear}`;
+    }
+  
+    return formatted;
+  }, [dateRange, rootWidth]);
 
   const toggleDatePicker = () => setShowDatePicker((prev) => !prev);
 
@@ -57,14 +84,47 @@ const DatePicker = ({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
+  const widgetId = useMemo(() => `widget-${Math.random().toString(36).substr(2, 9)}`, []);
+  useEffect(() => {
+    if (!options.primaryColor || !datePickerRef.current) return;
+  
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = `
+      .${widgetId} .rdrSelected, .${widgetId} .rdrInRange, .${widgetId} .rdrStartEdge, .${widgetId} .rdrEndEdge
+      {
+        background: ${options.thirdColor} !important;
+        color: white !important;
+      }
+  
+      .${widgetId} .rdrDay:hover {
+        background: ${options.thirdColor}1c !important;
+        color: white !important;
+      }
+    `;
+    datePickerRef.current.appendChild(styleTag);
+  
+    return () => {
+      // Cleanup: remove old style tag
+      styleTag.remove();
+    };
+  }, [options.primaryColor]);
 
   return (
     <div
       ref={datePickerRef}
-      className="p-4 relative flex items-center justify-center gap-2 cursor-pointer"
+      style={{
+        padding: options.location ? "10px" : "6px",
+        paddingRight: "0px",
+      }}
+      className={`pr-0 relative flex items-center justify-center gap-2 cursor-pointer ${widgetId} `}
     >
       <span
-        className="text-gray-100 text-xs font-semibold mt-[2px] hidden md:block mr-2"
+        style={{
+          fontSize: rootWidth < 480 ? "10px" : "12px",
+          marginRight: rootWidth < 480 ? "4px" : "8px",
+        }}
+        className="text-gray-100 text-xs font-semibold mt-[2px] block"
         onClick={toggleDatePicker}
       >
         {formattedRange}
@@ -77,7 +137,7 @@ const DatePicker = ({
           xmlns="http://www.w3.org/2000/svg"
           className="w-6 h-6"
           fill="none"
-          viewBox="0 0 24 24"
+          viewBox="0 0 25 24"
           strokeWidth={1.5}
           stroke="currentColor"
         >
