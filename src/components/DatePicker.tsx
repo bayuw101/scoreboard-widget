@@ -114,8 +114,10 @@ const DatePicker = ({
     <div
       ref={datePickerRef}
       style={{
-        padding: options.location ? "10px" : "6px",
-        paddingRight: "0px",
+        paddingTop: options.location ? "10px" : "6px",
+        paddingBottom: options.location ? "10px" : "6px",
+        paddingLeft: options.location ? "10px" : "6px",
+        paddingRight: "0px", // now there's no conflict
       }}
       className={`pr-0 relative flex items-center justify-center gap-2 cursor-pointer ${widgetId} `}
     >

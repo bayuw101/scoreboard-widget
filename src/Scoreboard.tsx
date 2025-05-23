@@ -49,7 +49,12 @@ const Scoreboard = ({
     sportIds,
     setLoading,
   });
-  const {slides, col} = useSlidesToShow(options, rootWidth, rootHeight, itemHeight);
+  const { slides, col } = useSlidesToShow(
+    options,
+    rootWidth,
+    rootHeight,
+    itemHeight
+  );
 
   const initialSlideIndex = useInitialSlideIndex(resources);
 
@@ -87,9 +92,13 @@ const Scoreboard = ({
       parameters,
       eventsLoading,
     } as HeaderProps;
-
     return (
-      <>
+      <div
+        style={{
+          width: rootWidth,
+        }}
+        className="arbtr-scrbrd"
+      >
         {header === "top" && <Header {...headerSettings} />}
         <div
           style={{
@@ -100,14 +109,14 @@ const Scoreboard = ({
             }`,
             backgroundColor: options.backgroundColor,
           }}
-          className={`${
-            options.vertical || "px-8"
-          } ${options.theme === "dark" ? "" : "border-b-2 border-gray-300"}`}
+          className={`${options.vertical || "px-8"} ${
+            options.theme === "dark" ? "" : "border-b-2 border-gray-300"
+          }`}
         >
           <SliderSection {...sliderSettings} />
         </div>
         {header === "bottom" && <Header {...headerSettings} />}
-      </>
+      </div>
     );
   } else {
     const sidebarSettings = {
@@ -123,7 +132,7 @@ const Scoreboard = ({
       slides,
     } as SidebarProps;
     return (
-      <div className="flex w-full" style={{ height: itemHeight }}>
+      <div className="arbtr-scrbrd flex w-full" style={{ height: itemHeight,width: rootWidth, }}>
         {header === "left" && <Sidebar {...sidebarSettings} />}
         <div
           className="slider bg-gray-100 px-8"

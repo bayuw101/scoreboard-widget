@@ -11,5 +11,5 @@ export const defaultOptions:OptionsType = {
     backgroundColor: "#f3f4f6", // Light Gray
     hideSports: false,
     location: true,
-    whiteTeamLogo: false,
+    teamLogoFilter: "colored",
 };

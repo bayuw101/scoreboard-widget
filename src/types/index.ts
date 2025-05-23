@@ -17,6 +17,7 @@ export type ResourceType = {
   awayLogo?: string;
   sport: string;
   sportLogo?: string;
+  eventLink?: string;
   date: string;
   time?: string;
   location?: string;
@@ -35,7 +36,7 @@ export type OptionsType = {
   thirdColor?: string;
   backgroundColor?: string;
   hideSports?: boolean;
-  whiteTeamLogo?: boolean;
+  teamLogoFilter?: "colored" | "white" | "black" | "none";
 };
 
 export type ParameterType = {

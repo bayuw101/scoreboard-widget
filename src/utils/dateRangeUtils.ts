@@ -1,11 +1,16 @@
 import type { Range } from "react-date-range";
-
 export const DEFAULT_DATE_RANGE = (): Range[] => {
   const today = new Date();
+  const startDate = new Date(today);
+  startDate.setDate(startDate.getDate() - 55);
+
+  const endDate = new Date(today);
+  endDate.setDate(endDate.getDate() + 30);
+
   return [
     {
-      startDate: new Date(today.setDate(today.getDate() - 3)),
-      endDate: new Date(today.setDate(today.getDate() + 7)),
+      startDate,
+      endDate,
       key: "selection",
     },
   ];

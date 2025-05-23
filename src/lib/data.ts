@@ -527,6 +527,75 @@ export const genders = [
   },
 ];
 
+export const schoolYears = [
+	{
+		SchoolYearID: 11,
+		Name: "2020-21",
+		StartDate: "2020-07-01T00:00:00",
+		EndDate: "2021-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 51,
+		Name: "2022-23",
+		StartDate: "2022-07-01T00:00:00",
+		EndDate: "2023-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 89,
+		Name: "2021-22",
+		StartDate: "2021-07-01T00:00:00",
+		EndDate: "2022-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 90,
+		Name: "2023-24",
+		StartDate: "2023-07-01T00:00:00",
+		EndDate: "2024-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 91,
+		Name: "2024-25",
+		StartDate: "2024-07-01T00:00:00",
+		EndDate: "2025-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 92,
+		Name: "2025-26",
+		StartDate: "2025-07-01T00:00:00",
+		EndDate: "2026-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 93,
+		Name: "2026-27",
+		StartDate: "2026-07-01T00:00:00",
+		EndDate: "2027-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 94,
+		Name: "2027-28",
+		StartDate: "2027-07-01T00:00:00",
+		EndDate: "2028-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 95,
+		Name: "2028-29",
+		StartDate: "2028-07-01T00:00:00",
+		EndDate: "2029-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 96,
+		Name: "2029-30",
+		StartDate: "2029-07-01T00:00:00",
+		EndDate: "2030-07-01T00:00:00",
+	},
+	{
+		SchoolYearID: 97,
+		Name: "2030-31",
+		StartDate: "2030-07-01T00:00:00",
+		EndDate: "2031-07-01T00:00:00",
+	},
+];
+
 export const teams = [
   {
       entityId: "28753",

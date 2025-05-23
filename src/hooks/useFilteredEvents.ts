@@ -1,8 +1,9 @@
 // hooks/useFilteredEvents.ts
 import { useMemo, useEffect } from "react";
-import { sports, genders, levels } from "../lib/data";
+import { sports, genders, levels, teams } from "../lib/data";
 import type { EventType, SportType } from "../types";
 import type { Range } from "react-date-range";
+import { getTeamLink, rename } from "../utils/team";
 
 export function useFilteredEvents({
   events,
@@ -71,18 +72,26 @@ export function useFilteredEvents({
 
         const eventDate = new Date(event.fromDate);
 
+        const homeEntityId =  teams.find(
+          (team) => team.publicId === String(home.entityId) || team.entityId === String(home.entityId)
+        )?.entityId;
+        
+        const awayEntityId =  teams.find(
+          (team) => team.publicId === String(away.entityId) || team.entityId === String(away.entityId)
+        )?.entityId;
+        
         return {
-          home: home.teamName.length > 28 
-            ? home.teamName.replace("High School", "HS") 
-            : home.teamName,
-          away: away.teamName.length > 28 
-            ? away.teamName.replace("High School", "HS") 
-            : away.teamName,
+          home: rename(home.teamName),
+          away: rename(away.teamName),
           homeScore: (home.score === 0 ? "0" : home.score || "-") as string,
           awayScore: (away.score === 0 ? "0" : away.score || "-") as string,
-          homeLogo: "https://assets.arbitersports.com/logos/organization/"+home.entityId,
-          awayLogo: "https://assets.arbitersports.com/logos/organization/"+away.entityId,
+          homeLogo: homeEntityId ? "https://assets.arbitersports.com/logos/organization/"+homeEntityId : "https://cdn.arbitersports.com/Shared/SchoolLogos/logo"+home.entityId+".png",
+          awayLogo: awayEntityId ? "https://assets.arbitersports.com/logos/organization/"+awayEntityId : "https://cdn.arbitersports.com/Shared/SchoolLogos/logo"+away.entityId+".png",
           sport: sportName,
+          eventLink: getTeamLink({
+            event,
+            homeTeam: home,
+          }),
           sportLogo: "",
           location: event.siteName || "TBD",
           date: eventDate.toLocaleDateString(),
