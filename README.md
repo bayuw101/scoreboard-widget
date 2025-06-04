@@ -4,6 +4,9 @@
 A fully embeddable and customizable scoreboard widget built with **React + Vite**, allowing you to display events by sport, date, and filters. Designed for simple integration into any website.
 
 
+<img src="./preview.png" alt="Widget Screenshot" width="100%"/>
+
+
 https://arbiter-widget.vercel.app/
 
 You can visit https://arbiter-widget.vercel.app/ to get a general idea of how the widget is distributed to clients.This Widget Manager app, built with Next.js, empowers clients to easily customize and generate their own widgets also enforces that clients can only generate tokens for the schools they have been granted access to. As administrators, we retain full control over which schools and widgets each client can access, ensuring tailored and secure deployments. The system is functional but still has plenty of room for future improvements and feature expansion.
