@@ -14,8 +14,7 @@ export const useEvents = (organizationToken:string) => {
             try {
                 setLoading(true);
                 const data = await getEvents(organizationToken);
-                console.log('events', data);
-                if (!data || !data.data) {
+                if (organizationToken === 'dummy') {
                     setEvents(dummyEvents);
                 }else{
                     setEvents(data.data);

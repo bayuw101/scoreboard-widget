@@ -132,20 +132,25 @@ const Scoreboard = ({
       slides,
     } as SidebarProps;
     return (
-      <div className="arbtr-scrbrd flex w-full" style={{ height: itemHeight,width: rootWidth, }}>
-        {header === "left" && <Sidebar {...sidebarSettings} />}
-        <div
-          className="slider bg-gray-100 px-8"
-          style={{
-            width: `${sidebar ? (slides / (slides + 1)) * 100 : 100}%`,
-            height: itemHeight,
-            borderTop: `28px solid ${options.secondaryColor}`,
-            backgroundColor: options.backgroundColor,
-          }}
-        >
-          <SliderSection {...sliderSettings} />
+      <div
+        className="arbtr-scrbrd"
+        style={{ height: itemHeight, width: rootWidth }}
+      >
+        <div className="flex w-full">
+          {header === "left" && <Sidebar {...sidebarSettings} />}
+          <div
+            className="slider bg-gray-100 px-8"
+            style={{
+              width: `${sidebar ? (slides / (slides + 1)) * 100 : 100}%`,
+              height: itemHeight,
+              borderTop: `28px solid ${options.secondaryColor}`,
+              backgroundColor: options.backgroundColor,
+            }}
+          >
+            <SliderSection {...sliderSettings} />
+          </div>
+          {header === "right" && <Sidebar {...sidebarSettings} />}
         </div>
-        {header === "right" && <Sidebar {...sidebarSettings} />}
       </div>
     );
   }
